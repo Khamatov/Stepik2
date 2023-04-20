@@ -4,7 +4,8 @@ import time
 browser = webdriver.Chrome()
 link = "https://anflat.ru"
 browser.get(link)
-button = browser.find_element(By.CSS_SELECTOR, ".accept-cookie-block-action button")
+buttonCloseCoockie = browser.find_element(By.CSS_SELECTOR, ".accept-cookie-block-action button")
+buttonCloseTimepadBanner = browser.find_element(By.CSS_SELECTOR, ".modal-content-close-btn-img")
 # browser.execute_script("return arguments[0].scrollIntoView(true);", button)
-button.click()
+buttonCloseCoockie.click()
 time.sleep(10)
