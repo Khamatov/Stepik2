@@ -9,3 +9,4 @@ buttonCloseTimepadBanner = browser.find_element(By.CSS_SELECTOR, ".modal-content
 # browser.execute_script("return arguments[0].scrollIntoView(true);", button)
 buttonCloseCoockie.click()
 time.sleep(10)
+
