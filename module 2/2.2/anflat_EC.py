@@ -3,10 +3,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 import time
+link = "https://anflat.ru/"
 browser = webdriver.Chrome()
-
 browser.maximize_window()
-browser.get("https://anflat.ru/")
+
+browser.get(link)
 
 # говорим Selenium проверять в течение 2 секунд, пока баннер с куками не станет кликабельным
 buttonCloseCoockie = WebDriverWait(browser, 2).until(
