@@ -16,9 +16,9 @@ mainH1Text = mainH1.text
 expectedH1Text = "Купить квартиру в Казани - подбор объектов"
 #Функция для проверки
 def test_input_text(expected_result, actual_result):
-    assert expected_result in actual_result, f"expected {expected_result}, got {actual_result}"
+    assert expected_result != actual_result, f"expected {expected_result}, got {actual_result}"
 
-test_input_text(expectedH1Text, mainH1Text)
+
 # говорим Selenium проверять в течение 2 секунд, пока баннер с куками не станет кликабельным
 buttonCloseCoockie = WebDriverWait(browser, 2).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, ".accept-cookie-block-action button"))
@@ -42,4 +42,4 @@ print("Таймпадовский баннер нашёлся и закрылс�
 assert expectedH1Text == mainH1Text, f"Строка {mainH1Text} не равна {expectedH1Text}"
 print("Строка h1 найдена")
 time.sleep(2)
-
+test_input_text(expectedH1Text, mainH1Text)

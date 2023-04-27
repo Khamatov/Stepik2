@@ -2,9 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import unittest
-
-
-try:
+import pytest
+class test_Login(unittest.TestCase):
     link = "http://suninjuly.github.io/registration2.html"
     driver = webdriver.Chrome()
     driver.get(link)
@@ -29,10 +28,11 @@ try:
     welcome_text = welcome_text_elt.text
 
     # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-    assert "Congratulations! You have successfully registered!" == welcome_text
-
-finally:
+    def test_successRegistry(self):
+        self.assertEqual("Congratulations! You have successfully registered!", test_Login.welcome_text, "abracadabra")
     # ожидание чтобы визуально оценить результаты прохождения скрипта
     time.sleep(3)
     # закрываем браузер после всех манипуляций
     driver.quit()
+if __name__ == "__main__":
+    unittest.main()
